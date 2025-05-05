@@ -25,7 +25,7 @@ const verificarLibroAsignadoAAutor = async (req, res, next) => {
   const { id } = req.params;
 
   try {
-    const autorAsignado = await Autor.findOne({ libro: id });
+    const autorAsignado = await Autor.findOne({ libros: id });
 
     if (autorAsignado) {
       return res.status(400).json({
